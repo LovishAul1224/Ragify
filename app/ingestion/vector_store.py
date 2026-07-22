@@ -1,6 +1,7 @@
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_core.embeddings import Embeddings
+from app.config import CHROMA_DB_DIR, COLLECTION_NAME
 
 
 class VectorStore:
@@ -9,8 +10,8 @@ class VectorStore:
     def __init__(
         self,
         embedding_model: Embeddings,
-        persist_directory: str = "chroma_db",
-        collection_name: str = "smart_rag",
+        persist_directory: str = CHROMA_DB_DIR,
+        collection_name: str = COLLECTION_NAME,
     ):
         self.vector_store = Chroma(
             collection_name=collection_name,
