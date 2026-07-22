@@ -23,3 +23,11 @@ class VectorStore:
 
     def get_collection_count(self) -> int:
         return self.vector_store._collection.count()
+    
+    def reset_collection(self)-> None:
+        self.vector_store.delete_collection()
+        self.vector_store = Chroma(
+        collection_name="smart_rag",
+        embedding_function=self.vector_store._embedding_function,
+        persist_directory="chroma_db",
+    )
