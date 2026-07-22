@@ -25,6 +25,10 @@ class IngestionPipeline:
 
         print(f"Created {len(chunks)} chunks")
 
+##  resetting chroma collections.
+        self.vector_store.reset_collection()
+
+
         print("Storing in ChromaDB...")
 
         self.vector_store.add_documents(chunks)
