@@ -1,4 +1,18 @@
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+MODEL_NAME = "deepseek/deepseek-chat-v3"
+
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+
+TEMPERATURE = 0
+
+SIMILARITY_THRESHOLD = 1.20
 
 # -------------------------
 # Project Paths
