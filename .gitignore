@@ -13,3 +13,4 @@ wheels/
 .env
 chroma_db/
 .pytest_cache/
+__init__.py

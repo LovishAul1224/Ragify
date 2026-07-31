@@ -21,7 +21,7 @@ with st.sidebar:
     st.header("Settings") 
     
     enable_web_search = st.toggle( 
-        "Enable Web Search",
+        "Web Search",
           value=False, 
           ) 
     
