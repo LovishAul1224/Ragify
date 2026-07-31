@@ -18,5 +18,12 @@ class OpenRouterLLM:
         )
 
     def generate(self, prompt: str) -> str:
-        response = self.llm.invoke(prompt)
-        return response.content
+        try:
+            response = self.llm.invoke(prompt)
+
+            return response.content
+
+        except Exception as e:
+            raise RuntimeError(
+                f"LLM generation failed: {str(e)}"
+            )
