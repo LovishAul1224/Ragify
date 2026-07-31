@@ -3,11 +3,7 @@ from langchain_core.documents import Document
 from app.config import CHUNK_SIZE, CHUNK_OVERLAP
 
 class DocumentSplitter:
-    def __init__(
-        self,
-        chunk_size = 1000,
-        chunk_overlap = 200
-    ):
+    def __init__(self):
         self.splitter = RecursiveCharacterTextSplitter(
             chunk_size=CHUNK_SIZE,
             chunk_overlap=CHUNK_OVERLAP

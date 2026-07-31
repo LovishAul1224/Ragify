@@ -5,7 +5,7 @@ from app.config import CHROMA_DB_DIR, COLLECTION_NAME
 
 
 class VectorStore:
-    """Handles storing and retrieving document embeddings."""
+
 
     def __init__(
         self,
