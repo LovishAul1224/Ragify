@@ -7,22 +7,6 @@ def main():
     pipeline.run()
 
 
-    rag = RAGService()
-
-    query = "What is self attention?"
-
-    response = rag.ask(query)
-
-    print("\nAnswer:")
-    print(response.answer)
-    print("\nSimilarity Score:")
-    print(response.similarity_score)
-    print("\nSource:")
-    print(response.source)
-    print("\nPage:")
-    print(response.page)
-
-
 
 if __name__ == "__main__":
     main()
