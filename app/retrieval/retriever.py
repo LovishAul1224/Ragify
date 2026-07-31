@@ -9,6 +9,7 @@ class Retriever:
           persist_directory="chroma_db",
           collection_name="smart_rag"  
     ):
+# loading the embedding model
         embedding_model = EmbeddingModel().get_embeddings()
 
         self.vector_store = Chroma(
@@ -20,12 +21,7 @@ class Retriever:
         self.retriever = self.vector_store.as_retriever(
             search_kwargs={"k":TOP_K}
         )
-        
-    def retrieve(
-            self,
-            query: str,
-    )-> list[Document]:
-        return self.retriever.invoke(query)
+
     
 
     def retrieve_with_score(self,query:str,k: int=5):
