@@ -5,9 +5,13 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "authlib>=1.7.2",
     "chromadb>=1.5.9",
     "ddgs>=9.14.4",
     "duckduckgo-search>=8.1.1",
+    "google-api-python-client>=2.198.0",
+    "google-auth-httplib2>=0.4.1",
+    "google-auth-oauthlib>=1.4.0",
     "langchain>=1.3.14",
     "langchain-chroma>=1.1.0",
     "langchain-community>=0.4.2",
@@ -18,6 +22,7 @@ dependencies = [
     "python-dotenv>=1.2.2",
     "sentence-transformers>=5.6.0",
     "streamlit>=1.60.0",
+    "streamlit-google-picker>=0.2.7",
     "torchvision>=0.28.0",
 ]
 

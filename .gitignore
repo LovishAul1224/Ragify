@@ -20,6 +20,6 @@ credentials/
 .streamlit
 
 
-data/pdfs
+data/uploads
 
 streamlit2.py
