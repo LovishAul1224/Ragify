@@ -14,3 +14,12 @@ wheels/
 chroma_db/
 .pytest_cache/
 __init__.py
+
+credentials/
+
+.streamlit
+
+
+data/pdfs
+
+streamlit2.py
