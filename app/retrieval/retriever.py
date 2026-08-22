@@ -1,32 +1,42 @@
 from langchain_chroma import Chroma
-from langchain_core.documents import Document
 from app.ingestion.embeddings import EmbeddingModel
-from app.config import TOP_K
+from app.config import (
+    TOP_K,
+    CHROMA_DB_DIR,
+    COLLECTION_NAME,
+)
+
 
 class Retriever:
-    def __init__(
-          self,
-          persist_directory="chroma_db",
-          collection_name="smart_rag"  
-    ):
-# loading the embedding model
-        embedding_model = EmbeddingModel().get_embeddings()
+
+    def __init__(self):
+
+        embedding_model = (
+            EmbeddingModel().get_embeddings()
+        )
 
         self.vector_store = Chroma(
-            collection_name=collection_name,
+            collection_name=COLLECTION_NAME,
             embedding_function=embedding_model,
-            persist_directory=persist_directory,
+            persist_directory=CHROMA_DB_DIR,
         )
 
         self.retriever = self.vector_store.as_retriever(
-            search_kwargs={"k":TOP_K}
+            search_kwargs={
+                "k": TOP_K
+            }
         )
 
-    
+    def retrieve_with_score(
+        self,
+        query: str,
+        k: int = 5,
+    ):
 
-    def retrieve_with_score(self,query:str,k: int=5):
-        return self.vector_store.similarity_search_with_score(
-            query=query,
-            k=k,
+        return (
+            self.vector_store
+            .similarity_search_with_score(
+                query=query,
+                k=k,
+            )
         )
-
