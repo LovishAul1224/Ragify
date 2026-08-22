@@ -67,3 +67,4 @@ class RAGService:
             source = Path(best_doc.metadata.get("source", "")).name,
             page=best_doc.metadata.get("page", -1),
         )
+    
